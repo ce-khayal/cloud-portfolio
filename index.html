@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KM // Cloud Portfolio — Khayal Khuduzade &amp; Emil Mustafayev</title>
+<meta name="description" content="Joint engineering portfolio of Khayal Khuduzade and Emil Mustafayev, 4th-year Computer Engineering students at AzTU.">
+<meta name="theme-color" content="#0a0f1c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%81%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1c; --card:#111827; --card-2:#0e1524; --line:#1f2a3d;
+  --text:#e5eaf3; --muted:#94a3b8; --cyan:#38bdf8; --indigo:#818cf8;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.lead{color:var(--muted);max-width:62ch;margin-bottom:40px}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(10,15,28,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--mono);font-weight:500;font-size:.95rem}
+.logo b{color:var(--cyan);font-weight:500}
+.links{display:flex;gap:6px;list-style:none}
+.links a{display:block;padding:8px 14px;border-radius:8px;color:var(--muted);font-size:.92rem;font-weight:500;transition:color .2s,background .2s}
+.links a:hover{color:var(--text);background:var(--card)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+
+/* Hero */
+.hero{padding:112px 0 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:560px;height:560px;background:radial-gradient(circle,rgba(56,189,248,.14),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -10%;width:520px;height:520px;background:radial-gradient(circle,rgba(129,140,248,.12),transparent 65%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.tag-line{font-family:var(--mono);font-size:.85rem;color:var(--cyan);margin-bottom:22px}
+.hero h1{font-size:clamp(2.3rem,6vw,4.1rem);line-height:1.08;font-weight:800;letter-spacing:-.035em;max-width:16ch}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--indigo));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:60ch;margin:24px 0 36px}
+.hero p strong{color:var(--text);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:10px;font-weight:600;font-size:.95rem;border:1px solid transparent;transition:transform .15s,box-shadow .2s,border-color .2s}
+.btn-primary{background:linear-gradient(90deg,var(--cyan),var(--indigo));color:#06101f}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(56,189,248,.25)}
+.btn-ghost{border-color:var(--line);background:var(--card)}
+.btn-ghost:hover{border-color:var(--cyan)}
+
+/* Cards */
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:rgba(56,189,248,.45)}
+.avatar{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-weight:700;font-size:1.15rem;color:#06101f;background:linear-gradient(135deg,var(--cyan),var(--indigo));margin-bottom:18px}
+.card h3{font-size:1.25rem;letter-spacing:-.01em}
+.role{color:var(--cyan);font-weight:500;font-size:.95rem;margin:2px 0 12px}
+.edu{font-family:var(--mono);font-size:.8rem;color:var(--muted);padding:10px 12px;background:var(--card-2);border:1px solid var(--line);border-radius:8px;margin-bottom:14px}
+.card p{color:var(--muted);font-size:.95rem}
+.link{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--cyan);font-weight:600;font-size:.92rem}
+.link:hover{text-decoration:underline}
+.link.disabled{color:var(--muted);pointer-events:none;opacity:.8}
+
+/* Skills */
+.skill-card h3{font-size:1.05rem;margin-bottom:16px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:.8rem;padding:6px 12px;border-radius:999px;background:var(--card-2);border:1px solid var(--line);color:var(--text)}
+.skill-card:nth-child(1) .chip:hover,.skill-card:nth-child(3) .chip:hover{border-color:var(--cyan);color:var(--cyan)}
+.skill-card:nth-child(2) .chip:hover{border-color:var(--indigo);color:var(--indigo)}
+
+/* Projects */
+.g-proj{grid-template-columns:repeat(2,1fr)}
+.proj{display:flex;flex-direction:column}
+.proj .by{align-self:flex-start;font-family:var(--mono);font-size:.75rem;padding:4px 10px;border-radius:6px;color:var(--indigo);background:rgba(129,140,248,.1);border:1px solid rgba(129,140,248,.3);margin-bottom:14px}
+.proj h3{margin-bottom:10px}
+.proj p{flex:1;margin-bottom:18px}
+.proj .chips .chip{font-size:.75rem;padding:4px 10px;color:var(--cyan)}
+
+/* Architecture */
+.arch{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:14px;align-items:stretch}
+.node{background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:20px 16px;text-align:center}
+.node .ic{font-size:1.6rem;margin-bottom:6px}
+.node h4{font-size:.95rem;margin-bottom:4px}
+.node small{display:block;font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.node.hl{border-color:rgba(56,189,248,.5)}
+.arrow{align-self:center;color:var(--cyan);font-size:1.5rem;font-family:var(--mono)}
+.notes{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.note{border-left:2px solid var(--indigo);padding-left:14px;color:var(--muted);font-size:.9rem}
+.note b{display:block;color:var(--text);font-size:.92rem;margin-bottom:2px}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:56px 0 40px;background:var(--card-2)}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+.foot h4{font-size:1rem;margin-bottom:10px}
+.foot p,.foot li{color:var(--muted);font-size:.92rem}
+.foot ul{list-style:none;display:grid;gap:6px}
+.foot a{color:var(--cyan)}
+.foot a:hover{text-decoration:underline}
+.copy{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;font-family:var(--mono)}
+
+/* Hero entrance (single orchestrated moment) */
+@media (prefers-reduced-motion:no-preference){
+  .hero .wrap>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .wrap>*:nth-child(2){animation-delay:.08s}
+  .hero .wrap>*:nth-child(3){animation-delay:.16s}
+  .hero .wrap>*:nth-child(4){animation-delay:.24s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Responsive */
+@media (max-width:900px){
+  .g3{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .arrow{transform:rotate(90deg);justify-self:center}
+  .notes{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  section{padding:64px 0}
+  .hero{padding:72px 0 64px}
+  .g2,.g-proj{grid-template-columns:1fr}
+  .menu-btn{display:block}
+  .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 24px 16px}
+  .links.open{display:flex}
+  .arch{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo">KM <b>//</b> Cloud Portfolio</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <ul class="links" id="navLinks">
+      <li><a href="#team">Team</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <div class="wrap">
+    <div class="tag-line">&gt; AzTU · Computer Engineering · Cloud Technologies</div>
+    <h1>Building <span class="grad">Scalable Backend</span> &amp; Cloud Solutions</h1>
+    <p>A joint engineering portfolio by <strong>Khayal Khuduzade</strong> and <strong>Emil Mustafayev</strong>, 4th-year Computer Engineering students at Azerbaijan Technical University (AzTU).</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="#projects">View Our Projects</a>
+      <a class="btn btn-ghost" href="https://github.com/ce-khayal" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+    </div>
+  </div>
+</header>
+
+<section id="team">
+  <div class="wrap">
+    <h2>Team</h2>
+    <p class="lead">Two engineers, one shared stack: data and backend on one side, cloud infrastructure and systems on the other.</p>
+    <div class="grid g2">
+      <article class="card">
+        <div class="avatar" aria-hidden="true">KK</div>
+        <h3>Khayal Khuduzade</h3>
+        <div class="role">Backend &amp; Data Engineering Focus</div>
+        <div class="edu">B.Sc. in Computer Engineering (4th Year) · Azerbaijan Technical University (AzTU)</div>
+        <p>Specializes in Python, FastAPI, database architecture, large-scale data analysis with DuckDB and PySpark, and cloud infrastructure automation.</p>
+        <a class="link" href="https://github.com/ce-khayal" target="_blank" rel="noopener noreferrer">GitHub: ce-khayal</a>
+      </article>
+      <article class="card">
+        <div class="avatar" aria-hidden="true">EM</div>
+        <h3>Emil Mustafayev</h3>
+        <div class="role">Cloud Infrastructure &amp; Systems Engineering Focus</div>
+        <div class="edu">B.Sc. in Computer Engineering (4th Year) · Azerbaijan Technical University (AzTU)</div>
+        <p>Specializes in cloud service configuration, networking and DNS management, Linux system administration, and web application deployment.</p>
+        <!-- TODO: replace "#" with Emil's GitHub profile URL -->
+        <a class="link" href="#" id="emilGithub" target="_blank" rel="noopener noreferrer">GitHub: add link</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Tech Stack &amp; Skills</h2>
+    <p class="lead">The tools we use to design, build, and ship.</p>
+    <div class="grid g3">
+      <div class="card skill-card">
+        <h3>Backend &amp; Languages</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">SQL</span>
+          <span class="chip">C/C++</span><span class="chip">HTML5/CSS3</span><span class="chip">JavaScript</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h3>Data &amp; Databases</h3>
+        <div class="chips">
+          <span class="chip">MySQL</span><span class="chip">DuckDB</span><span class="chip">PySpark</span>
+          <span class="chip">pandas</span><span class="chip">Power BI</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="chips">
+          <span class="chip">Microsoft Azure (Static Web Apps)</span><span class="chip">Git</span>
+          <span class="chip">GitHub Actions (CI/CD)</span><span class="chip">Docker</span>
+          <span class="chip">Redis</span><span class="chip">Linux</span><span class="chip">DNS/SSL Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected Academic &amp; Engineering Projects</h2>
+    <p class="lead">Coursework and engineering work across cloud, data, and databases.</p>
+    <div class="grid g-proj">
+      <article class="card proj">
+        <span class="by">Khayal &amp; Emil</span>
+        <h3>Azure Cloud Portfolio &amp; CI/CD Pipeline</h3>
+        <p>A cloud-hosted portfolio deployed on Azure Static Web Apps (Free Tier), automated with GitHub Actions, and secured with a custom domain and free SSL/HTTPS.</p>
+        <div class="chips"><span class="chip">Azure Static Web Apps</span><span class="chip">GitHub Actions</span><span class="chip">DNS</span><span class="chip">SSL/HTTPS</span></div>
+      </article>
+      <article class="card proj">
+        <span class="by">Khayal</span>
+        <h3>Big Data Processing Benchmark (NYC Taxi Dataset)</h3>
+        <p>Runs identical analytical tasks on pandas, SQL (DuckDB), and PySpark, comparing execution speed and scaling behavior at 100x data volume.</p>
+        <div class="chips"><span class="chip">pandas</span><span class="chip">DuckDB</span><span class="chip">PySpark</span><span class="chip">Python</span></div>
+      </article>
+      <article class="card proj">
+        <span class="by">Khayal &amp; Emil</span>
+        <h3>Relational Database Architecture &amp; CRUD System</h3>
+        <p>Covers ER diagram design, normalization, and optimized CRUD operations on MySQL.</p>
+        <div class="chips"><span class="chip">MySQL</span><span class="chip">SQL</span><span class="chip">ER Modeling</span><span class="chip">Normalization</span></div>
+      </article>
+      <article class="card proj">
+        <span class="by">Khayal</span>
+        <h3>Numerical Methods: Lagrange Polynomial Interpolation</h3>
+        <p>Implements function interpolation with numerical methods in Python, including an error analysis algorithm.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Numerical Methods</span><span class="chip">Error Analysis</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <h2>Cloud Architecture &amp; Deployment</h2>
+    <p class="lead">How this very site gets from a commit to your browser.</p>
+    <div class="arch">
+      <div class="flow" role="list" aria-label="Deployment pipeline">
+        <div class="node" role="listitem"><div class="ic" aria-hidden="true">📦</div><h4>GitHub Repo</h4><small>ce-khayal</small></div>
+        <div class="arrow" aria-hidden="true">➔</div>
+        <div class="node" role="listitem"><div class="ic" aria-hidden="true">⚙️</div><h4>GitHub Actions</h4><small>CI/CD</small></div>
+        <div class="arrow" aria-hidden="true">➔</div>
+        <div class="node hl" role="listitem"><div class="ic" aria-hidden="true">☁️</div><h4>Azure Static Web Apps</h4><small>West Europe</small></div>
+        <div class="arrow" aria-hidden="true">➔</div>
+        <div class="node" role="listitem"><div class="ic" aria-hidden="true">🔒</div><h4>Custom DNS + Free SSL</h4><small>HTTPS</small></div>
+      </div>
+      <div class="notes">
+        <div class="note"><b>Push to deploy</b>A commit to the main branch triggers the workflow, which builds and publishes the site automatically.</div>
+        <div class="note"><b>Global static hosting</b>Static files are served from Azure's edge network. The Free Tier keeps the cost at zero.</div>
+        <div class="note"><b>Secure by default</b>A custom domain is mapped through DNS records, and Azure issues and renews the SSL certificate.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>KM // Cloud Portfolio</h4>
+        <p>Azerbaijan Technical University — Department of Computer Engineering (2026)</p>
+      </div>
+      <div>
+        <h4>Khayal Khuduzade</h4>
+        <ul><li>Backend &amp; Data Engineering</li><li><a href="https://github.com/ce-khayal" target="_blank" rel="noopener noreferrer">github.com/ce-khayal</a></li></ul>
+      </div>
+      <div>
+        <h4>Emil Mustafayev</h4>
+        <ul><li>Cloud Infrastructure &amp; Systems</li><li><a href="#" id="emilGithubFoot" target="_blank" rel="noopener noreferrer">GitHub: add link</a></li></ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 Khayal Khuduzade &amp; Emil Mustafayev · Hosted on Azure Static Web Apps</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Set Emil's GitHub URL here once available.
+  var EMIL_GITHUB = "#";
+
+  var hasLink = EMIL_GITHUB && EMIL_GITHUB !== "#";
+  ["emilGithub","emilGithubFoot"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    el.href = EMIL_GITHUB;
+    if(hasLink){ el.textContent = el.id === "emilGithub" ? "GitHub Profile" : el.textContent.replace("add link", EMIL_GITHUB.replace(/^https?:\/\//,"")); }
+    else { el.classList.add("disabled"); el.setAttribute("aria-disabled","true"); el.removeAttribute("target"); }
+  });
+
+  var btn = document.getElementById("menuBtn"), links = document.getElementById("navLinks");
+  btn.addEventListener("click", function(){
+    var open = links.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open);
+  });
+  links.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){ links.classList.remove("open"); btn.setAttribute("aria-expanded","false"); }
+  });
+})();
+</script>
+</body>
+</html>
